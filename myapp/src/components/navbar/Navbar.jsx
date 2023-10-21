@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-        <Link href='/' className={styles.logo}>BiteSize</Link>
+        <Link href='/' className={styles.logo}>Bite Size</Link>
         <div className={styles.links}>
             {links.map(link=>(
                 <Link key={link.id} href={link.url} className={styles.link}>{link.title}</Link>

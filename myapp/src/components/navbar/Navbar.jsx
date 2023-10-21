@@ -1,10 +1,12 @@
 "use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './navbar.module.css'
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle'
+import { ThemeContext } from '@/context/ThemeContext'
 
 const Navbar = () => {
+  const {toggle} = useContext(ThemeContext)
     const links = [
       {
         id: 1,

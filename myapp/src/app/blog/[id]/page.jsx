@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -23,38 +23,25 @@ const BlogPost = async ({params}) => {
         <div className={styles.top}>
           <div className={styles.info}>
             <h1 className={styles.title}>{data.title}</h1>
-            <p className={styles.desc}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum eum fugit delectus recusandae obcaecati, molestiae amet, beatae repellat sapiente hic soluta corporis minima eligendi ducimus dolore fugiat, quam vel.
-            </p>
+            <p className={styles.desc}>{data.desc}</p>
             <div className={styles.author}>
               <Image
-                src='/illustration.png'
+                src={data.img}
                 alt=""
                 width={40}
                 height={40}
                 className={styles.avatar}
               />
-              <span className={styles.username}>jane doe</span>
+              <span className={styles.username}>{data.username}</span>
             </div>
           </div>
           <div className={styles.imageContainer}>
-            <Image src='/illustration.png' alt="" fill={true} className={styles.image} />
+            <Image src={data.img} alt="" fill={true} className={styles.image} />
           </div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni cupiditate temporibus placeat omnis, fugiat eius natus vero architecto cumque, consequuntur veritatis enim cum similique quae culpa quo eligendi unde itaque.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ab culpa, quasi repellat fugit cum voluptates neque officiis ducimus sit iure. Cum saepe, repellendus aliquam explicabo iure nisi sit quia.
+          <p className={styles.text}>
+            {data.content}
           </p>
         </div>
       </div>

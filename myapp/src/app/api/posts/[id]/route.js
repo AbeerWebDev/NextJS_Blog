@@ -4,6 +4,7 @@ import Post from "@/models/Post";
 
 export const GET = async (request, {params}) => {
     const { id } = params
+
   try {
     await connect();
     const post = await Post.findById(id);

@@ -3,11 +3,8 @@ import Link from 'next/link'
 import React, { useContext } from 'react'
 import styles from './navbar.module.css'
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle'
-import { ThemeContext } from '@/context/ThemeContext'
-import Image from 'next/image'
 
 const Navbar = () => {
-  const {toggle} = useContext(ThemeContext)
     const links = [
       {
         id: 1,

@@ -85,4 +85,4 @@ NextJS_Blog is currently in active development.
 Many thanks to the Next.js and MongoDB communities for their valuable contributions and tools.
 
 ## Contact
-Created by [Abeer] - [LinkedIn profile](https://www.linkedin.com/in/abeerwebdev/) - Feel free to contact me.
+Created by Abeer - [LinkedIn profile](https://www.linkedin.com/in/abeerwebdev/) - Feel free to contact me.
